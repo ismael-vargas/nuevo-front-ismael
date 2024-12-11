@@ -5,7 +5,7 @@
             <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
                 <div class="text-center mb-5">
                     <img src="assets/demo/images/login/avatar.png" alt="Imagen de avatar" height="50" class="mb-3">
-                    <div class="text-900 text-3xl font-medium mb-3">¡Bienvenido, Jeremy!</div>
+                    <div class="text-900 text-3xl font-medium mb-3">¡Bienvenido, Ismael Vargas!</div>
                     <span class="text-600 font-medium">Inicia sesión para continuar</span>
                 </div>
 
@@ -39,21 +39,27 @@
 
                     <div class="flex align-items-center justify-content-between mb-5 gap-5">
                         <div class="flex align-items-center">
-                            <input type="checkbox" id="rememberme1" />
+                            <!-- Uso de ngModel con standalone: true -->
+                            <input type="checkbox" id="rememberme1" [(ngModel)]="rememberMe" [ngModelOptions]="{standalone: true}" />
                             <label for="rememberme1">Recuérdame</label>
-                        </div>
-                        <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)" [routerLink]="['/forgot-password']">
-                            ¿Olvidaste tu contraseña?
-                        </a>
+                          </div>
+                          
+                        <a 
+                        class="font-medium no-underline ml-2 text-right cursor-pointer" 
+                        style="color: var(--primary-color)" 
+                        [routerLink]="['/auth/forgot-password']">
+                        ¿Olvidaste tu contraseña?
+                      </a>
                     </div>
                     <button 
-                        pButton 
-                        pRipple 
-                        label="Iniciar Sesión" 
-                        class="w-full p-3 text-xl" 
-                        [disabled]="!loginForm.valid" 
-                        (click)="funIngresar()">
-                    </button>
+    pButton 
+    pRipple 
+    label="Iniciar Sesión" 
+    class="w-full p-3 text-xl" 
+    [disabled]="!loginForm.valid" 
+    type="button"
+    (click)="funIngresar()">
+</button>
                 </form>
             </div>
         </div>
